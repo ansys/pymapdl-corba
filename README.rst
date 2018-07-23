@@ -10,6 +10,7 @@ Installation
 Pre-compiled binary files are available for Python 2.7, 3.5, and 3.6 for Linux and Windows.  Open an `issue <https://github.com/akaszynski/ansys_corba/issues>`_ if you need another version.  Python 3.7 is unavailable as the source isn't compiling.  Wait until 4.2.3 or greater is released.  Contact the maintainer at `omniORB`_.
 
 Installation is simply:
+
 .. code::
 
     pip install ansys_corba
@@ -101,4 +102,4 @@ This code is licensed under the MIT license.
 
 This module, ``ansys_corba`` makes no commercial claim over ANSYS whatsoever.  This tool extends the functionality of ANSYS by adding a python interface in both file interface as well as interactive scripting without changing the core behavior or license of the original software. The use of the interactive APDL control of ``ansys_corba`` requires a legally licensed local copy of ANSYS.
 
-Also, this module wouldn't be possible without `omniORB>`_ as most of the source code is directly take from omniORBpy with only minor modifications to the file structure and the addition of documentation specific to ANSYS.
+Also, this module wouldn't be possible without `omniORB`_ as most of the source code is directly take from omniORBpy with only minor modifications to the file structure and the addition of documentation specific to ANSYS.
