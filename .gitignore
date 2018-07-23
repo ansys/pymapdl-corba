@@ -1,0 +1,35 @@
+# Compiled source #
+###################
+*.pyc
+*.pyd
+*.c
+*.cpp
+*.so
+*.o
+*.cache
+
+# OS generated files #
+######################
+.fuse_hidden*
+*~
+*swp
+
+# Pip generated folders #
+#########################
+pyansys.egg-info/
+build/
+dist/
+
+# MISC
+pyansys/Interface.py
+*.bat
+
+# Testing
+factory/
+Testing/
+UnitTesting/
+TODO
+test.sh
+.pytest_cache/
+tests/.coverage
+tests/htmlcov
