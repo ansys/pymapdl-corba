@@ -29,7 +29,7 @@
 """
 omniORB module -- omniORB specific features
 """
-
+# print('called __init__')
 import sys, types, imp, os, os.path, tempfile
 
 try:
@@ -408,16 +408,20 @@ def newModule(mname):
 
     return mod
 
+
 def updateModule(mname):
     """
     updateModule(mname) -- update a module with a partial module
     stored in the partial module map.
     """
     if mname in _partialModules:
-        pmod = _partialModules[mname]
-        mod  = sys.modules[mname]
-        mod.__dict__.update(pmod.__dict__)
-        del _partialModules[mname]
+        if mname in sys.modules:
+            pmod = _partialModules[mname]
+            mod  = sys.modules[mname]
+            mod.__dict__.update(pmod.__dict__)
+            del _partialModules[mname]
+        else:
+            promotePartialModule(mname)
 
 
 def promotePartialModule(mname):
@@ -425,8 +429,9 @@ def promotePartialModule(mname):
     promotePartialModule(mname) -- convert partial module to full
     module in sys.modules.
     """
-    sys.modules[mname] = _partialModules[mname]
-    del _partialModules[mname]
+    if mname in _partialModules:
+        sys.modules[mname] = _partialModules[mname]
+        del _partialModules[mname]
 
 
 def skeletonModuleName(mname):

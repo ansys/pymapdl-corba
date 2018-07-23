@@ -33,3 +33,4 @@ test.sh
 .pytest_cache/
 tests/.coverage
 tests/htmlcov
+*egg*
