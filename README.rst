@@ -35,6 +35,10 @@ Once again, you really should be using ``pyansys``.  It handles figuring out whe
     logfile = 'mapdl_broadcasts.txt'
     if os.path.isfile(logfile):
         os.remove(logfile)
+
+    # make temporary input file to stop ansys from prompting the user
+    with open('tmp.inp', 'w') as f:
+        f.write('FINISH')
     
     # start ANSYS
     command = '"%s" -aas -i tmp.inp -o out.txt -b' % ansys_loc
