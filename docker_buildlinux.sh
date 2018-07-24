@@ -5,6 +5,7 @@ docker run -d -i quay.io/pypa/manylinux1_x86_64 /bin/bash
 CONTAINERID=$(docker ps -q -n 1)
 
 # copy over base python source
+cd ..
 docker exec -it $CONTAINERID mkdir /tmp/omniorbpy_bin
 docker exec -it $CONTAINERID mkdir /tmp/omniorbpy_bin/wheels
 docker cp base.tar $CONTAINERID:/tmp/omniorbpy_bin

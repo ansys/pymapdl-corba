@@ -11,9 +11,7 @@ from setuptools import setup, Extension
 setup(
     name='ansys_corba',
     packages=['ansys_corba'],
-
-    # Version
-    version='0.1.0',
+    version='0.1.1',
     description='ANSYS MAPDL interface using partial files from omniORB and omniORBpy',
     long_description=open('README.rst').read(),
 
