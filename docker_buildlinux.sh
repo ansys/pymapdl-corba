@@ -19,10 +19,7 @@ CONTAINERID=$(docker ps -q -n 1)
 # docker run -it -v $OMNI_PATH:/tmp/omni -i quay.io/pypa/manylinux2010_x86_64 /bin/bash
 
 # copy over base python source
-cd ..
-tar -cf base.tar base/
-cp base.tar $OMNI_PATH
-cd base
+tar -cf $OMNI_PATH/base.tar *
 
 # build wheels
 docker cp docker.sh $CONTAINERID:/tmp/

@@ -49,6 +49,9 @@ for PYBINDIR in /opt/python/*/bin; do
     if [[ $PYBINDIR == .*27.* ]]
     then
     	continue
+    elif [[ $PYBINDIR == .*27.* ]]
+    then
+        continue
     fi
 
     pyver="$(cut -d'/' -f4 <<<$PYBINDIR)"
